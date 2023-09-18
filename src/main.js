@@ -170,9 +170,8 @@ generateShop();
 
 const increment = (id) => {
     const itemId = id;
-    const search = basket.find((x) => { 
-       return  x.id === itemId;
-    });
+    const search = basket.find((x) =>  x.id === itemId
+    );
     if (search === undefined ){
         basket.push({
             id: itemId,
@@ -182,7 +181,8 @@ const increment = (id) => {
         search.item += 1;
         };
 
-    console.log(basket);
+    // console.log(basket);
+    update(id);
 }
 
 const decrement = (id) => {
@@ -195,9 +195,13 @@ const decrement = (id) => {
         search.item -= 1;
     };
 
-    console.log(basket);
+    // console.log(basket);
+    update(id)
 }
 
-const update = () => {
-
+const update = (id) => {
+  const search = basket.find((x) => { 
+    return  x.id === id;
+ });
+  console.log(search);
 }
